@@ -417,7 +417,7 @@
         if ($(this).class==="disabled") return
         var name = $("#name2").val();
         var email = $("#email2").val();
-        var message = $("#message").val();
+        var message = $("#message").text();
         var skills = getCheckValues('input[name=skills]');
 
         $("#send_email2").text("Sending E-mail... Please wait");
