@@ -1,0 +1,136 @@
+
+.navbar-fixed-left {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 100%;
+  z-index: 1000;
+  border: none;
+}
+.navbar-fixed-left .container-fluid {
+  background-color: white;
+}
+body {
+  margin-left: 200px;
+}
+
+@media (max-width:600px) {
+  .navbar-fixed-left {
+    transition: 0.3s;
+    /*display: none;*/
+    left: -200px;
+  }
+  body {
+    margin-left: 0px;
+  }
+  .mobile-topnav {
+    display: block;
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+  }
+  .icon-bar {
+    background: #555;
+  }
+  .mobile-topnav button {
+    margin-right: 25px;
+    background-color: #eee;
+  }
+}
+
+body.mobile-show {
+  /*margin-left: 200px;*/
+}
+body.mobile-show .navbar.navbar-fixed-left {
+  /*display: block;*/
+  left: 0px;
+}
+
+
+.jumbotron{
+ background-image: url(background2.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ background-color: black;
+ height: 100vh;
+ font-size: 150%;
+ color:black;
+ margin-right: 0px;
+}
+
+ul{
+  list-style: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
+li {
+  margin-top: 10px;
+  color: black;
+}
+.break{
+  border: 1px solid black;
+  padding:0px;
+  width: 50%;
+  margin: 25px 10px 50px 10px;
+}
+
+#navbar{
+  margin-top: 150px;
+  margin-bottom: 100vh;
+}
+.subHead{
+  text-align: center;
+  font-weight: 600;
+  margin-top:30px;
+}
+.spacer{
+  margin-bottom: 50px;
+}
+#home{
+  color:black;
+  font-size: 200%;
+}
+.header{
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+#header{
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.transistionImage{
+  background-image: url(background2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: black;
+  height: 30vh;
+}
+.footer{
+  background-color: white;
+  color:black;
+}
+.logo img {
+  padding:none;
+  height:75px;
+  width: 75px;
+  margin:25px;
+
+}
+.disabled{
+  color: gray;
+}
+.contact_form{
+  font-size: 20px;
+}
+#topLink{
+  margin-top: 25px;
+}
