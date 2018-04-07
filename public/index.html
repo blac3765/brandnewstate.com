@@ -406,7 +406,7 @@
           office: office,
           services: services
         };
-        $.get("http://localhost:3000/send", params, function(data) {
+        $.get("api/send", params, function(data) {
           console.log(data);
         });
         $("#send_email1").text("Email Sent!");
@@ -428,7 +428,7 @@
           message: message,
           skills: skills
         };
-        $.get("http://localhost:3000/send", params, function(data) {
+        $.get("/api/send", params, function(data) {
           console.log(data);
         });
         $("#send_email2").text("Email Sent!");

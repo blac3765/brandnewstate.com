@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport({
   auth: config.nodemailer
 });
 
-app.get('/send', function(req,res) {
+app.get('/api/send', function(req,res) {
   if(req.query.type === 'candidate'){
     var text = [
       'Type: Candidate',
