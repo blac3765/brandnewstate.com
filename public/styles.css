@@ -18,7 +18,6 @@ body {
 @media (max-width:600px) {
   .navbar-fixed-left {
     transition: 0.3s;
-    /*display: none;*/
     left: -200px;
   }
   body {
@@ -38,6 +37,17 @@ body {
     margin-right: 25px;
     background-color: #eee;
   }
+  .jumbotron{
+    background-image: url(smallbackground2.jpg);
+  }
+  .transistionImage{
+    background-image: url(smallbackground2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
+    height: 30vh;
+  }
 }
 
 body.mobile-show {
@@ -50,7 +60,7 @@ body.mobile-show .navbar.navbar-fixed-left {
 
 
 .jumbotron{
- background-image: url(background2.jpg);
+ background-image: url(smallbackground2.jpg);
  background-repeat: no-repeat;
  background-size: cover;
  background-attachment: fixed;
@@ -67,7 +77,7 @@ ul{
   text-transform: uppercase;
   color: black;
 }
-li {
+li > a {
   margin-top: 10px;
   color: black;
 }
@@ -107,7 +117,7 @@ li {
   font-weight: bolder;
 }
 .transistionImage{
-  background-image: url(background2.jpg);
+  background-image: url(smallbackground2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
