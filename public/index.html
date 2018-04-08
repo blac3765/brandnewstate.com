@@ -34,7 +34,7 @@
       </div>
     </nav>
 
-
+<!-- Mobile nav -->
     <div class="navbar-header mobile-topnav">
       <button type="button" class="navbar-toggle" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -183,6 +183,7 @@
 
 
 <div class="row">
+  <!-- Well for Candidate form -->
   <div class="col-md-6 col-xs-12">
     <div class="well">
       <form class="row form-horizontal">
@@ -191,20 +192,26 @@
           <p>Are you an educator running for office? Fill out this form:</p>
         </div>
         <div class="form-group col-md-12 col-xs-12">
-          <label for="inputEmail3" class="col-xs-2 control-label">Name</label>
-          <div class="col-xs-10">
+          <label class="col-xs-3 control-label">Name</label>
+          <div class="col-xs-9">
             <input type="text" class="form-control" id="name1" placeholder="First and Last Name">
           </div>
         </div>
         <div class="form-group col-md-12 col-xs-12">
-          <label for="inputEmail3" class="col-xs-2 control-label">Email</label>
-          <div class="col-xs-10">
+          <label class="col-xs-3 control-label">Email</label>
+          <div class="col-xs-9">
             <input type="email" class="form-control" id="email1" placeholder="Email">
           </div>
         </div>
         <div class="form-group col-md-12 col-xs-12">
-          <label for="district" class="col-xs-2 control-label">District:</label>
-            <div class="col-xs-10">
+          <label class="text-left col-xs-3 control-label">Current Occupation</label>
+          <div class="col-xs-9">
+            <input type="text" class="form-control" id="job" placeholder="Occupation">
+          </div>
+        </div>
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-xs-3 control-label">District:</label>
+            <div class="col-xs-9">
             <input type="number" class="form-control" id="districtNumber" placeholder="District Number...">
           </div>
         </div>
@@ -267,6 +274,7 @@
     </div>
 
   </div>
+  <!-- Well for Volunteer form -->
   <div class="col-md-6 col-xs-12">
       <div class="well">
         <form class="row form-horizontal">
@@ -275,25 +283,25 @@
             <p>Are you a creative who wants to help? Fill out this form:</p>
           </div>
           <div class="form-group col-md-12 col-xs-12">
-              <label for="inputEmail3" class="col-xs-2 control-label">Name</label>
-              <div class="col-xs-10">
+              <label class="col-xs-3 control-label">Name</label>
+              <div class="col-xs-9">
                 <input type="text" class="form-control" id="name2" placeholder="First and Last Name">
               </div>
           </div>
           <div class="form-group col-md-12 col-xs-12">
-            <label for="inputEmail3" class="col-xs-2 control-label">Email</label>
-            <div class="col-xs-10">
+            <label class="col-xs-3 control-label">Email</label>
+            <div class="col-xs-9">
               <input type="email" class="form-control" id="email2" placeholder="Email">
             </div>
           </div>
           <div class="form-group col-md-12 col-xs-12">
-            <label for="inputPassword3" class="text-left col-md-2 col-xs-3 control-label">Message</label>
-            <div class="col-md-10 col-xs-9">
-              <textarea class="form-control" id="message" placeholder="Message"></textarea>
+            <label class="text-left col-md-3 col-xs-3 control-label">Message</label>
+            <div class="col-md-9 col-xs-9">
+              <textarea class="form-control" type= "text" id="message" placeholder="Message"></textarea>
             </div>
           </div>
           <div class="col-xs-12">
-            <label for="district" class="pull-left col-xs-5 control-label">Skills you bring:</label>
+            <label class="pull-left col-xs-5 control-label">Skills you bring:</label>
           </div>
         <div class="form-group col-md-12 col-xs-12">
           <div id="photography2" class="col-xs-12">
@@ -364,7 +372,6 @@
         <div class="transistionImage col-md-12 col-xs-12">
         </div>
       </div>
-      <!--/.Footer Links-->
 
       <!--Copyright-->
       <div class="container-fluid">
@@ -372,10 +379,9 @@
               <div class='footer text-center'><strong class="footer">© 2018 Copyright: <a class="footer" href="blacklabeldesign.co">blacklabeldesign.co</a></strong></div>
           </div>
       </div>
-      <!--/.Copyright-->
+
 
   </footer>
-  <!--/.Footer-->
 
   <script>
     $(document).ready(function() {
@@ -388,39 +394,40 @@
       });
 
 
-      $("#send_email1").on('click', function() {
-        if ($(this).class==="disabled") return
-        var name = $("#name1").val();
-        var email = $("#email1").val();
-        var districtNumber = $("#districtNumber").val();
-
+      $('#send_email1').on('click', function() {
+        if ($(this).class==='disabled') return
+        var name = $('#name1').val();
+        var email = $('#email1').val();
+        var job = $('#job').val();
+        var districtNumber = $('#districtNumber').val();
         var office = getCheckValues('input[name=office]');
         var services = getCheckValues('input[name=services]');
 
-        $("#send_email1").text("Sending E-mail... Please wait");
+        $('#send_email1').text("Sending E-mail... Please wait");
         var params = {
           type: 'candidate',
           name: name,
           email: email,
+          job: job,
           districtNumber: districtNumber,
           office: office,
           services: services
         };
-        $.get("api/send", params, function(data) {
+        $.get('api/send', params, function(data) {
           console.log(data);
         });
-        $("#send_email1").text("Email Sent!");
-        $("#send_email1").addClass("disabled");
+        $('#send_email1').text("Email Sent!");
+        $('#send_email1').addClass('disabled');
       });
 
-      $("#send_email2").on('click', function() {
-        if ($(this).class==="disabled") return
-        var name = $("#name2").val();
-        var email = $("#email2").val();
-        var message = $("#message").text();
+      $('#send_email2').on('click', function() {
+        if ($(this).class==='disabled') return
+        var name = $('#name2').val();
+        var email = $('#email2').val();
+        var message = $('#message').val();
         var skills = getCheckValues('input[name=skills]');
 
-        $("#send_email2").text("Sending E-mail... Please wait");
+        $('#send_email2').text("Sending E-mail... Please wait");
         var params = {
           type: 'volunteer',
           name: name,
@@ -428,11 +435,11 @@
           message: message,
           skills: skills
         };
-        $.get("/api/send", params, function(data) {
+        $.get('/api/send', params, function(data) {
           console.log(data);
         });
-        $("#send_email2").text("Email Sent!");
-        $("#send_email2").addClass("disabled");
+        $('#send_email2').text("Email Sent!");
+        $('#send_email2').addClass("disabled");
       });
     });
 

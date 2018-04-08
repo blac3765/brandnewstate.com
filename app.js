@@ -17,6 +17,7 @@ app.get('/api/send', function(req,res) {
       'Type: Candidate',
       'Name:     ' + req.query.name,
       'Email:    ' + req.query.email,
+      'Job:      ' + req.query.job,
       'District: ' + req.query.districtNumber,
       'Office:   ' + req.query.office,
       'Services: ' + req.query.services
@@ -27,8 +28,8 @@ app.get('/api/send', function(req,res) {
     'Type: Volunteer',
     'Name:     ' + req.query.name,
     'Email:    ' + req.query.email,
-    'Message: ' + req.query.message,
-    'Skills: ' + req.query.skills
+    'Message:  ' + req.query.message,
+    'Skills:   ' + req.query.skills
   ].join('\n');
 }
   var mailOptions = {
