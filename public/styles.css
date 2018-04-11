@@ -45,6 +45,11 @@ body {
   }
   .jumbotron{
     background-image: url(smallbackground2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    margin-right: 0px;
   }
   .transistionImage{
     background-image: url(smallbackground2.jpg);
