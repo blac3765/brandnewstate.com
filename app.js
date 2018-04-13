@@ -34,7 +34,7 @@ app.get('/api/send', function(req,res) {
 }
   var mailOptions = {
     from: 'Brand New State <brandnewstateok@gmail.com>',
-    to: 'brandnewstateok.com',
+    to: 'brandnewstateok@gmail.com',
     subject: 'New Submission',
     text: text
   };
