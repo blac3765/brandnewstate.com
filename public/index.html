@@ -18,14 +18,15 @@
     <title>Brand New State</title>
   </head>
   <body>
-    <div id="fb-root"></div>
+    <!-- Facebook feed script (paused)
+	<div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));</script> -->
     <nav class="navbar navbar-fixed-left">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -337,6 +338,12 @@
               <input type="email" class="form-control" id="email2" placeholder="Email">
             </div>
           </div>
+		  <div class="form-group col-md-12 col-xs-12">
+            <label class="col-xs-12 control-label">Where are you located:</label>
+            <div class="col-xs-12">
+              <input type="text" class="form-control" id="location" placeholder="Address">
+            </div>
+          </div>
           <div class="form-group col-md-12 col-xs-12">
             <label class="col-xs-12 control-label">Message:</label>
             <div class="col-xs-12">
@@ -475,6 +482,7 @@
         if ($(this).class==='disabled') return
         var name = $('#name2').val();
         var email = $('#email2').val();
+		var location = $('#location').val();
         var message = $('#message').val();
         var skills = getCheckValues('input[name=skills]');
 
@@ -483,6 +491,7 @@
           type: 'volunteer',
           name: name,
           email: email,
+		  location: location,
           message: message,
           skills: skills
         };

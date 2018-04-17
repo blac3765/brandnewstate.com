@@ -28,6 +28,7 @@ app.get('/api/send', function(req,res) {
     'Type: Volunteer',
     'Name:     ' + req.query.name,
     'Email:    ' + req.query.email,
+	'Location: ' + req.query.location,
     'Message:  ' + req.query.message,
     'Skills:   ' + req.query.skills
   ].join('\n');
